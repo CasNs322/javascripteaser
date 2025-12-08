@@ -1,8 +1,23 @@
-import type { UserType } from '../../types';
-import { Accordion, Anchor, Avatar, Group, Paper, Stack, Text, Title, Tooltip } from '@mantine/core';
-import { IconBrandXbox, IconHome, IconMail, IconPhone } from '@tabler/icons-react';
-import { UserAddress } from './UserAddress';
-import { UserCompany } from './UserCompany';
+import type { UserType } from "../../types";
+import {
+  Accordion,
+  Anchor,
+  Avatar,
+  Group,
+  Paper,
+  Stack,
+  Text,
+  Title,
+  Tooltip,
+} from "@mantine/core";
+import {
+  IconBrandXbox,
+  IconHome,
+  IconMail,
+  IconPhone,
+} from "@tabler/icons-react";
+import { UserAddress } from "./UserAddress";
+import { UserCompany } from "./UserCompany";
 
 interface UserProps {
   data: UserType;
@@ -10,13 +25,15 @@ interface UserProps {
 
 export function User({ data }: UserProps) {
   return (
-    <Paper p="xs" maw={400} bd="1px solid gray">
+    <Paper p="xs" maw={450} bd="1px solid gray">
       <Stack>
         <Group justify="space-between" align="center">
           <Avatar />
           <Title size="h3">{data.name}</Title>
           <Tooltip label="Username">
-            <Text size="md" c="gray" style={{ justifySelf: 'flex-end' }}>{data.username}</Text>
+            <Text size="md" c="gray" style={{ justifySelf: "flex-end" }}>
+              {data.username}
+            </Text>
           </Tooltip>
         </Group>
         <Accordion>
@@ -27,7 +44,9 @@ export function User({ data }: UserProps) {
             </Accordion.Panel>
           </Accordion.Item>
           <Accordion.Item value={`${data.id} company`}>
-            <Accordion.Control icon={<IconBrandXbox />}>Company</Accordion.Control>
+            <Accordion.Control icon={<IconBrandXbox />}>
+              Company
+            </Accordion.Control>
             <Accordion.Panel>
               <UserCompany company={data.company} />
             </Accordion.Panel>
@@ -42,7 +61,9 @@ export function User({ data }: UserProps) {
           <Text size="md">{data.phone}</Text>
         </Group>
         <Tooltip label="User website">
-          <Anchor href="/" size="md">{data.website}</Anchor>
+          <Anchor href="/" size="md">
+            {data.website}
+          </Anchor>
         </Tooltip>
       </Stack>
     </Paper>
