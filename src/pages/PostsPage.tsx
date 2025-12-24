@@ -19,7 +19,18 @@ export function PostsPage() {
 
   if (data) {
     return (
-      <User data={data} />
+      <>
+        <User data={data} />
+        <User data={data} />
+        <User data={data} />
+        <User data={data} />
+        <User data={data} />
+        <User data={data} />
+        <User data={data} />
+        <User data={data} />
+        <User data={data} />
+        <User data={data} />
+      </>
     );
   }
 }
